@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PHPAmersfoort raffler</title>
+        <style type="text/css">
+            body {
+                background: #000;
+                color: #fff;
+                font-size: 248px;
+                text-align: center;
+            }
+
+            .attendee.drawn {
+                color: #44c800;
+            }
+
+            button {
+                font-size: 248px;
+            }
+        </style>
+        <script src="js/jquery.min.js"></script>
+        <script src="../raffler.js"></script>
+        <script>
+            $(document).ready(function() {
+                var raffler = new Raffler(['Tom', 'Thiago', 'Harm-Jan', 'Maarten', 'Petra', 'Martin', 'Lars', 'Christiaan', 'Ben', 'Rik']);
+
+                $('body').css('paddingTop', $(window).height() / 2 - $('.attendee').height() / 2);
+                $('.btn-spin').click(function() {
+                    $(this).hide();
+                    raffler.start();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="attendees"></div>
+        <button class="btn-spin">Spin!</button>
+    </body>
+</html>
