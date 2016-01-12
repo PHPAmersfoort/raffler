@@ -1,7 +1,7 @@
 function Raffler(attendees) {
     this.attendees = attendees;
     this.spins = 3;
-    this.speed = 100;
+    this.speed = 50;
     this.i = 0;
     this.draw = 0;
     this.elements = $();
@@ -18,7 +18,7 @@ function Raffler(attendees) {
 
     this.start = function() {
         raffler.i = 0;
-        raffler.draw = raffler.elements.length * raffler.spins + Math.round(Math.random()*10);
+        raffler.draw = raffler.elements.length * raffler.spins + Math.round(Math.random()*raffler.elements.length);
         raffler.next();
     };
 
@@ -37,7 +37,7 @@ function Raffler(attendees) {
             raffler.next();
         }, raffler.speed);
         if (elementIndex == 0) {
-            raffler.speed += 100;
+            raffler.speed += 50;
         }
         raffler.i++;
     };
