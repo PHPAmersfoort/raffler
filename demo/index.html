@@ -6,7 +6,7 @@
             body {
                 background: #000;
                 color: #fff;
-                font-size: 248px;
+                font-size: 180px;
                 text-align: center;
             }
 
@@ -19,10 +19,11 @@
             }
         </style>
         <script src="js/jquery.min.js"></script>
+        <script src="js/attendees.js"></script>
         <script src="../raffler.js"></script>
         <script>
             $(document).ready(function() {
-                var raffler = new Raffler(['Tom', 'Thiago', 'Harm-Jan', 'Maarten', 'Petra', 'Martin', 'Lars', 'Christiaan', 'Ben', 'Rik']);
+                var raffler = new Raffler(attendees);
 
                 $('body').css('paddingTop', $(window).height() / 2 - $('.attendee').height() / 2);
                 $('.btn-spin').click(function() {
